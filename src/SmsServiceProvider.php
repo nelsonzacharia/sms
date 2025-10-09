@@ -2,9 +2,9 @@
 
 namespace Nelson\Sms;
 
+use Nelson\Sms\Commands\SmsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Nelson\Sms\Commands\SmsCommand;
 
 class SmsServiceProvider extends PackageServiceProvider
 {
