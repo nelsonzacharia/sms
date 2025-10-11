@@ -2,30 +2,35 @@
 
 namespace Nelson\Sms;
 
-use Exception;
 use GuzzleHttp\Client;
 use Nelson\Sms\Models\SmsLog;
 
 class Sms
 {
     protected string $baseUrl;
+
     protected string $apiKey;
+
     protected string $senderId;
+
     protected bool $logEnabled;
+
     protected Client $client;
+
     protected $config;
+
     protected $authHeader;
 
     public function __construct(array $config)
     {
-        info('Sms config'. print_r($config, true));
+        info('Sms config'.print_r($config, true));
         $this->config = $config;
         $this->authHeader = $this->generateAuthHeader();
         $this->baseUrl = $config['base_url'];
-        $this->apiKey = $config['api_key']??'';
-        $this->senderId = $config['sender_id']??'';
-        $this->logEnabled = $config['log_enabled']?? false;
-        $this->client = $config['client'] ?? new Client(['base_uri' => $this->baseUrl,'timeout' => 15]);
+        $this->apiKey = $config['api_key'] ?? '';
+        $this->senderId = $config['sender_id'] ?? '';
+        $this->logEnabled = $config['log_enabled'] ?? false;
+        $this->client = $config['client'] ?? new Client(['base_uri' => $this->baseUrl, 'timeout' => 15]);
     }
 
     /**
@@ -175,7 +180,7 @@ class Sms
         } elseif (isset($payload['messages'])) {
             foreach ($payload['messages'] as $msg) {
                 if (isset($msg['to'])) {
-                    $recipients = array_merge($recipients, (array)$msg['to']);
+                    $recipients = array_merge($recipients, (array) $msg['to']);
                 }
             }
         }
@@ -202,13 +207,12 @@ class Sms
         }
     }
 
-
     private function generateAuthHeader()
     {
-        $credentials = $this->config['username'] . ':' . $this->config['password'];
-        return 'Basic ' . base64_encode($credentials);
-    }
+        $credentials = $this->config['username'].':'.$this->config['password'];
 
+        return 'Basic '.base64_encode($credentials);
+    }
 
     /**
      * Send a single SMS message

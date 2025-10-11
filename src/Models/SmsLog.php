@@ -17,7 +17,7 @@ class SmsLog extends Model
         'status_group_name',
         'status_id',
         'status_name',
-        'status_description'
+        'status_description',
     ];
 
     protected $casts = [
@@ -25,4 +25,3 @@ class SmsLog extends Model
         'response' => 'array',
     ];
 }
-

@@ -8,9 +8,9 @@ return [
         'base_url' => 'https://messaging-service.co.tz/api/sms/v1/',
         'log_enabled' => true, // Enable/disable DB logging
         'api_key' => env('NEXT_SMS_API_KEY'),
-        'username' => 'nelsonz',//env('NEXT_SMS_API_USERNAME'),
-        'password' => 'J0sh#@90',env('NEXT_SMS_API_PASSWORD'),
+        'username' => 'nelsonz', // env('NEXT_SMS_API_USERNAME'),
+        'password' => 'J0sh#@90', env('NEXT_SMS_API_PASSWORD'),
         'sender_id' => env('NEXT_SMS_SENDER_ID', 'N-SMS'),
         'client' => null,
-    ]
+    ],
 ];

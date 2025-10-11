@@ -26,6 +26,6 @@ class SmsCommandTest extends TestCase
     {
         $baseUrl = config()->get('sms.next.base_url');
 
-        $this->assertEquals($baseUrl,'https://messaging-service.co.tz/api/sms/v1/');
+        $this->assertEquals($baseUrl, 'https://messaging-service.co.tz/api/sms/v1/');
     }
 }

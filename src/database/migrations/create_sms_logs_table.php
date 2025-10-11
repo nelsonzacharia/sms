@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     public function up()
     {
         Schema::create('sms_logs', function (Blueprint $table) {
@@ -32,8 +33,7 @@ return new class extends Migration {
     }
 };
 
-//composer dump-autoload
-//php artisan vendor:publish --provider="Nelson\Sms\SmsServiceProvider" --tag=config
-//php artisan vendor:publish --provider="Nelson\Sms\SmsServiceProvider" --tag=migrations
-//php artisan migrate
-
+// composer dump-autoload
+// php artisan vendor:publish --provider="Nelson\Sms\SmsServiceProvider" --tag=config
+// php artisan vendor:publish --provider="Nelson\Sms\SmsServiceProvider" --tag=migrations
+// php artisan migrate
