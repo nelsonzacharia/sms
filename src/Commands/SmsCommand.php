@@ -12,7 +12,8 @@ class SmsCommand extends Command
 
     public function handle(): int
     {
-        $this->comment('All done');
+        $testUrlSingle = config('sms.next.test_single_url');
+        $this->comment($testUrlSingle);
 
         return self::SUCCESS;
     }
